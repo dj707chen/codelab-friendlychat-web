@@ -23,3 +23,5 @@ web/public/**/*.js
 web-start/public/**/*.js
 performance-monitoring/public/**/*.js
 performance-monitoring-start/public/**/*.js
+
+*/dist/**

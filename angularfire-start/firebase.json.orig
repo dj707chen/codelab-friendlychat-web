@@ -3,32 +3,24 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "hosting": {
-    "public": "./src/",
-    "ignore": [
-      "firebase.json",
-      "database-rules.json",
-      "storage.rules",
-      "functions"
-    ],
-    "headers": [
-      {
-        "source": "**/*.@(js|html)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=0"
-          }
-        ]
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
       }
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
+    },
+    {
+      "target": "friendlychat",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ],
   "storage": {
     "rules": "storage.rules"
   },
